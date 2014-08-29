@@ -1,0 +1,25 @@
+
+<div class="col-md-6 col-md-offset-3">
+<a ui-sref="home">Back</a>
+
+<h1>Update Item</h1>
+
+       <!-- push a new message into the array -->
+    <form ng-submit="addPost()">
+      <p>
+      
+      <label for="lewis">Lewis</label> <input name="lewis" type="radio" value="Lewis" ng-model="itemName" style="margin-right:30px;">
+      <label for="xuemin">Xuemin</label> <input name="xuemin" type="radio" value="Xuemin" ng-model="itemName">
+      </p>
+
+      <p>Value: {{itemName}}</p>
+
+      <p><input class="form-control" ng-model="itemTitle" /></p>
+
+      <p><input class="form-control" ng-model="itemAmount" placeholder="Item Cost" /></p>
+
+      <p><textarea class="form-control" ng-model="itemDetails" placeholder="Item Description" /></textarea></p>
+
+      <p><button class="btn btn-primary" type="submit">add message</button></p>
+    </form>
+</div>

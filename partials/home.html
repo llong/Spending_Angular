@@ -1,0 +1,35 @@
+    {{summed}}
+
+    <!-- Xuemin's Items -->
+    	<div class="col-md-4">
+    	<h1>Xuemin</h1>
+      <div class="well" ng-repeat="post in posts | filter: {name: 'Xuemin' } | orderBy: 'created_at':true">
+        <!-- exit a message -->
+  
+        <h4>{{post.title}}</h4>
+        <h3>${{post.amount}}</h3>
+        <p>{{post.details}}</p>
+        	<!-- delete message -->
+        
+      <p><a href="javascript:void(0);" class="pull-right glyphicon glyphicon-trash"  ng-click="messages.$remove(post)"></a></p>
+      </div>
+      </div>
+      
+
+      <!-- Lewis' Items -->
+      <div class="col-md-4 col-md-offset-1">
+      <h1>Lewis</h1>
+      <div class="well" ng-repeat="post in posts | filter: {name: 'Lewis' } | orderBy: 'created_at':true">
+        <!-- exit a message -->
+
+        <h4>{{post.title}}</h4>
+        <h3>${{post.amount}}</h3>
+        <p>{{post.details}}</p>
+        <p>{{post.created_at}}</p>
+          <!-- delete message -->
+      <p>
+      <a href="#/edit/{{posts.indexOf(post)}}">edit</a>
+
+      <a href="javascript:void(0);" class="pull-right glyphicon glyphicon-trash"  ng-click="removePost(post)" ng-confirm-click="Are you sure you want to remove this item?"></a>
+      </p>
+      </div>

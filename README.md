@@ -13,6 +13,6 @@ At the moment new items can be added to each persons list using Firebase as well
 Things to do:
 
 - Display dates in a friendly manner
-- Get total amount spent by each user and calculate remaining balance
+done - Get total amount spent by each user and calculate remaining balance
 - add option to update existing items
 - Make app prettier

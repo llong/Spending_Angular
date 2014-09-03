@@ -31,7 +31,7 @@ spendingApp.controller("SpendingController", function($scope, $firebase,$statePa
   var sync = $firebase(ref);
   $scope.posts = sync.$asArray();
   $scope.whichItem = $stateParams.itemId;
-  console.log($stateParams);
+  
 
   $scope.itemTitle = $scope.whichItem;
   
@@ -61,14 +61,15 @@ spendingApp.controller("SpendingController", function($scope, $firebase,$statePa
   var LewisTotal = 3200;
   var XueminTotal = 3200;
 
-  $scope.summed = function() {
-            var count = 0;
-            angular.forEach($scope.posts, function(val) {
-                count += val;
-            });
-            return count;
-      };
-
-
+  $scope.getTotal = function(user){
+    var total = 0;
+    for(var i = 0; i < $scope.posts.length; i++){
+        var product = $scope.posts[i];
+        if (product.name === user) {
+          total += product.amount;
+        }
+    }
+    return Math.round(total * 100) / 100;
+}
 
 });
